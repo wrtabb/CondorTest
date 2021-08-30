@@ -1,0 +1,16 @@
+universe                = Docker
+executable              = ProcessScript.sh
+arguments               = $(arg1)
+transfer_input_files    = ProcessScript.py,Analyze.C,rootlogon.C 
+
++WantDocker = True
+docker_image ="unlhcc/osg-wn-el7"
+use_x509userproxy = true
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_output_files   = output_data
+error                   = logs/error.$(arg1)Entries.log
+output                  = logs/output.$(arg1)Entries.log
+log                     = logs/foo.$(arg1)Entries.log
+queue
