@@ -18,9 +18,9 @@ The way this is set up to work:
 The script, SubmitJob.sh, sends the job to Condor with a few different numbers of events. If the number of events is set at -1000, the function will loop over all events in the file.
 
 Here is an explanation of each script in this repo:  
-- SubmitJob.sh: The submission script. This simply submits the job to Condor once for each of a list of variables defined in the script.  
-- condor_control.condor: This is the Condor submission script.   
-- ProcessScript.sh: Sets up the CMSSW environment needed and then runs the python script with the argument given to it by Condor submission script.  
-- rootlogon.C: When ROOT is executed, this file loads and compiles the ROOT script, Analyze.C.  
-- ProcessScript.py: A wrapper for the ROOT script. It loads the function from Analyze.C and gives it the argument fed to it from ProcessScript.sh.  
-- Analyze.C: The ROOT script which contains the main function that does the analysis.  
+- **SubmitJob.sh**: The submission script. This simply submits the job to Condor once for each of a list of variables defined in the script.  
+- **condor_control.condor**: This is the Condor submission script.   
+- **ProcessScript.sh**: Sets up the CMSSW environment needed and then runs the python script with the argument given to it by Condor submission script.  
+- **rootlogon.C**: When ROOT is executed, this file loads and compiles the ROOT script, Analyze.C.  
+- **ProcessScript.py**: A wrapper for the ROOT script. It loads the function from Analyze.C and gives it the argument fed to it from ProcessScript.sh.  
+- **Analyze.C**: The ROOT script which contains the main function that does the analysis.  
